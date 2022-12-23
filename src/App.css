@@ -1,0 +1,18 @@
+#root {
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 10px 10px;
+  color: white;
+  background-color: #F47B6E;
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
