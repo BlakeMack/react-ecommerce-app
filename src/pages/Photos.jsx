@@ -1,12 +1,13 @@
 import { useContext } from "react"
 import { Context } from "../context"
+import Photoitems from "../components/Photoitems"
 
 function Photos () {
   const {photos} = useContext(Context)
 
   const images = photos.map((photo) =>
     (
-      <img src={photo.url} key={photo.id}/>
+      <Photoitems key={photo.id} img={photo} />
     )
   )
 
@@ -14,8 +15,9 @@ function Photos () {
 
   return (
     <>
-      <h1>Main Photos here</h1>
-      {images}
+      <div className="wrapper">
+        {images}
+      </div>
     </>
   )
 }
