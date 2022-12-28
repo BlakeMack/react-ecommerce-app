@@ -4,11 +4,13 @@ import PropTypes from "prop-types"
 
 function Photoitems ({img, className}) {
 
-  const {toggleFavorite, addImageToCart} = useContext(Context)
+  const {toggleFavorite, addImageToCart, cart} = useContext(Context)
 
   const [hovered, setHovered] = useState(false)
 
-  const hearticon = () => {
+  const isImageInCart = cart.some((photo) => photo.id === img.id)
+
+  const heartIcon = () => {
     if(img.isFavorite) {
       return (
         <i
@@ -26,8 +28,23 @@ function Photoitems ({img, className}) {
     }
   }
 
+  const cartIcon = () => {
+    if(isImageInCart) {
+      return (
+        <i className="ri-shopping-cart-2-fill cart" onClick={() => !isImageInCart && addImageToCart(img.id)}></i>
+      )
+    } else if (hovered) {
+      return (
+        <i
+        className="ri-shopping-cart-2-line cart"
+        onClick={() => addImageToCart(img.id)}
+        ></i>
+      )
+    }
+  }
+
   // const hearticon = hovered && <i className="ri-heart-line heart"></i>
-  const carticon = hovered && <i className="ri-shopping-cart-2-line cart" onClick={() => addImageToCart(img.id)}></i>
+  // const carticon = hovered && <i className="ri-shopping-cart-2-line cart" onClick={() => addImageToCart(img.id)}></i>
   return (
 
 
@@ -36,8 +53,8 @@ function Photoitems ({img, className}) {
           onMouseLeave={() => setHovered(false)}
     >
       <img src={img.url} alt="" className='image-grid'/>
-      {hearticon()}
-      {carticon}
+      {heartIcon()}
+      {cartIcon()}
     </div>
   )
 }
