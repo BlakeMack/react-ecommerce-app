@@ -37,7 +37,7 @@ a {
 
 .cart {
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 90%;
   font-size: 2.5rem;
   color: #EA453C;
@@ -45,7 +45,7 @@ a {
 
 .heart {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 90%;
   font-size: 2.5rem;
   color: #ACE6EC;
