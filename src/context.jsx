@@ -6,6 +6,11 @@ function ContextProvider ({children}) {
 
   const [photos, setPhotos] = useState([])
 
+  const toggleFavorite = (id) => {
+    const newphotos = photos.map((photo) => photo.id === id ? {...photo, isFavorite: !photo.isFavorite} : photo)
+    setPhotos(newphotos)
+}
+
   console.log(photos)
 
   useEffect(() => {
@@ -15,7 +20,7 @@ function ContextProvider ({children}) {
   }, [])
 
   return (
-    <Context.Provider value={{photos}}>
+    <Context.Provider value={{photos, toggleFavorite}}>
       {children}
     </Context.Provider >
   )
