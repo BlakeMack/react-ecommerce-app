@@ -3,7 +3,7 @@ import { Context } from "../context"
 
 function Photoitems ({img, className}) {
 
-  const {toggleFavorite} = useContext(Context)
+  const {toggleFavorite, addImageToCart} = useContext(Context)
 
   const [hovered, setHovered] = useState(false)
 
@@ -26,7 +26,7 @@ function Photoitems ({img, className}) {
   }
 
   // const hearticon = hovered && <i className="ri-heart-line heart"></i>
-  const carticon = hovered && <i className="ri-shopping-cart-2-line cart"></i>
+  const carticon = hovered && <i className="ri-shopping-cart-2-line cart" onClick={() => addImageToCart(img.id)}></i>
   return (
 
 
