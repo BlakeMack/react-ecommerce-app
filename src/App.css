@@ -37,18 +37,18 @@ a {
 
 .cart {
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 90%;
   font-size: 2.5rem;
-  color: #EA453C;
+  color: #ACE6EC;
 }
 
 .heart {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 90%;
   font-size: 2.5rem;
-  color: #ACE6EC;
+  color: #EA453C;
 }
 
 @media (min-width: 1670px) {
