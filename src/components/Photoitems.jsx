@@ -1,5 +1,6 @@
 import { useState, useContext } from "react"
 import { Context } from "../context"
+import PropTypes from "prop-types"
 
 function Photoitems ({img, className}) {
 
@@ -39,6 +40,15 @@ function Photoitems ({img, className}) {
       {carticon}
     </div>
   )
+}
+
+Photoitems.propTypes = {
+  className: PropTypes.string.isRequired,
+  img: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    isFavorite: PropTypes.bool.isRequired
+  })
 }
 
 export default Photoitems
