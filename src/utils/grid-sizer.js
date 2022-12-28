@@ -3,5 +3,7 @@ export function gridSize(i) {
     return ("wide")
   } else if (i % 4 === 0) {
     return ("tall")
+  } else {
+    return ('')
   }
 }
