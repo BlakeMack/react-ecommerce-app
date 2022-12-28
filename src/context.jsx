@@ -17,6 +17,15 @@ function ContextProvider ({children}) {
     setCart([...cart, chosenPhoto])
   }
 
+  const removeImageFromCart = (id) => {
+    const filteredCart = cart.filter(photo => photo.id !== id)
+    setCart(filteredCart)
+  }
+
+  // const isImageInCart = (id) => {
+  //   cart.some((photo) => photo.id === id)
+  // }
+
   console.log(photos)
   console.log(cart)
 
@@ -27,7 +36,7 @@ function ContextProvider ({children}) {
   }, [])
 
   return (
-    <Context.Provider value={{photos, toggleFavorite, addImageToCart}}>
+    <Context.Provider value={{photos, cart, toggleFavorite, addImageToCart, removeImageFromCart}}>
       {children}
     </Context.Provider >
   )
