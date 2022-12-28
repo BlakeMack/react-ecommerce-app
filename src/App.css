@@ -20,12 +20,10 @@ a {
 .wrapper {
   padding: 10px;
   display: grid;
-  grid-gap: 4px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  /* grid-auto-rows: 100px; */
-  /* test out making grid-auto rows responsive, this will fix the varying grid length issue  */
+  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(min(25rem, 100%), 1fr));
+  grid-auto-rows: minmax(200px, 312px);
 }
-
 
 .image-container {
   position: relative;
@@ -35,4 +33,29 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.cart {
+  position: absolute;
+  top: 10%;
+  right: 90%;
+  font-size: 2.5rem;
+  color: #EA453C;
+}
+
+.heart {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  font-size: 2.5rem;
+  color: #ACE6EC;
+}
+
+@media (min-width: 1670px) {
+  .wide {
+    grid-column: span 2;
+  }
+  .tall {
+    grid-row: span 2;
+  }
 }
