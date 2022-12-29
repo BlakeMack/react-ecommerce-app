@@ -39,6 +39,15 @@ a {
   margin-bottom: 10px;
 }
 
+.item-container img {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+.trashcan {
+  font-size: 2.5rem;
+}
+
 .order-button {
   cursor: pointer;
   padding: 20px;
