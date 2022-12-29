@@ -25,8 +25,33 @@ a {
   grid-auto-rows: minmax(200px, 312px);
 }
 
+.Cart-page {
+  padding: 10px;
+  padding-left: 40px;
+  margin: 0 auto;
+  text-align: center;
+  width: 75%
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order-button {
+  cursor: pointer;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+  font-size: 2rem;
+}
+
 .image-container {
   position: relative;
+}
+
+.image-item {
+  width: 600px;
 }
 
 .image-grid {
