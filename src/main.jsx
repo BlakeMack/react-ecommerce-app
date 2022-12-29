@@ -9,6 +9,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <ContextProvider>
     <Router>
      <App />
-    </Router>,
+    </Router>
   </ContextProvider>
 )
