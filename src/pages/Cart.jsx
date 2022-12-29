@@ -24,6 +24,8 @@ function Cart () {
     }, 3000)
   }
 
+  const orderbutton = cart.length > 0 && <button className="order-button" onClick={checkout}>{buttonText}</button>
+
   const totalcost = () => {
     const number_total = cart.length * 5.99
     return number_total.toLocaleString("en-GB", {style: "currency", currency: "GBP"})
@@ -34,7 +36,7 @@ function Cart () {
       <h1>Cart</h1>
       {cartContent}
       <h1 className="total-price">Total: {totalcost()}</h1>
-      <button className="order-button" onClick={checkout}>{buttonText}</button>
+      {orderbutton}
     </div>
   )
 }
