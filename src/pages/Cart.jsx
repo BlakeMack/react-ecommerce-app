@@ -13,12 +13,10 @@ function Cart () {
   )
   )
 
-  console.log(cart)
 
   const checkout = () => {
     setButtonText("Ordering...")
     setTimeout(() => {
-      console.log("order placed!")
       setButtonText("Checkout")
       clearCart()
     }, 3000)

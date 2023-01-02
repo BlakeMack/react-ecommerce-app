@@ -12,7 +12,6 @@ function Photos () {
     )
   )
 
-  console.log(`photos sent from context: ${photos}`)
 
   return (
     <>
