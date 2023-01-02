@@ -30,8 +30,7 @@ function ContextProvider ({children}) {
   //   cart.some((photo) => photo.id === id)
   // }
 
-  console.log(photos)
-  console.log(cart)
+
 
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json")
