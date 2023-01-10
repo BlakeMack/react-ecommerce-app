@@ -10,6 +10,20 @@ function Photoitems ({img, className}) {
 
   const isImageInCart = cart.some((photo) => photo.id === img.id)
 
+  const saveToFavourites = () => {
+    if(img.isFavorite) {
+      localStorage.setItem(img.id, img.url);
+      console.log(localStorage.getItem(img.id, img.url))
+    } else {
+      if (localStorage.getItem(img.id)) {
+        localStorage.removeItem(img.id)
+      }
+      console.log(localStorage.getItem(img.id, img.url))
+    }
+  }
+
+  saveToFavourites()
+
   const heartIcon = () => {
     if(img.isFavorite) {
       return (
@@ -46,8 +60,6 @@ function Photoitems ({img, className}) {
   // const hearticon = hovered && <i className="ri-heart-line heart"></i>
   // const carticon = hovered && <i className="ri-shopping-cart-2-line cart" onClick={() => addImageToCart(img.id)}></i>
   return (
-
-
     <div className={`image-container ${className}`}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
