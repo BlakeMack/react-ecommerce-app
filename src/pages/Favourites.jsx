@@ -1,13 +1,12 @@
 import { useState, useContext } from "react"
 import { Context } from "../context"
+import Favitems from "../components/favitems"
 
 export default function Favourites () {
   const {favourites} = useContext(Context)
 
   const favimages = favourites.map((fav) => (
-    <div className="image-container">
-      <img src={fav.url} alt="" className="image-grid"/>
-    </div>
+    <Favitems key={fav.id} url={fav.url}/>
   )
 )
 
