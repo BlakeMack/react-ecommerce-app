@@ -6,6 +6,16 @@ function ContextProvider ({children}) {
 
   const [photos, setPhotos] = useState([])
   const [cart, setCart] = useState([])
+  const [favourites, setFavourites] = useState([])
+
+  useEffect(() => {
+    // each time the photos state array changes
+    // go through the photos array
+    // give me only the photos that exist in local storage
+    // set the favourites array with these photos
+    const newfavourites = photos.filter((photo) => localStorage.getItem(photo.id));
+    setFavourites(newfavourites)
+  }, [photos])
 
   const toggleFavorite = (id) => {
     const newphotos = photos.map((photo) => photo.id === id ? {...photo, isFavorite: !photo.isFavorite} : photo)
@@ -21,6 +31,10 @@ function ContextProvider ({children}) {
     const filteredCart = cart.filter(photo => photo.id !== id)
     setCart(filteredCart)
   }
+
+  // const addImageToFavourites = (id) => {
+  //   const chosenfav =
+  // }
 
   const clearCart = () => {
     setCart([])
@@ -39,7 +53,7 @@ function ContextProvider ({children}) {
   }, [])
 
   return (
-    <Context.Provider value={{photos, cart, toggleFavorite, addImageToCart, removeImageFromCart, clearCart}}>
+    <Context.Provider value={{photos, cart, favourites, toggleFavorite, addImageToCart, removeImageFromCart, clearCart}}>
       {children}
     </Context.Provider >
   )
