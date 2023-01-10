@@ -10,19 +10,17 @@ function Photoitems ({img, className}) {
 
   const isImageInCart = cart.some((photo) => photo.id === img.id)
 
-  const saveToFavourites = () => {
-    if(img.isFavorite) {
-      localStorage.setItem(img.id, img.url);
-      console.log(localStorage.getItem(img.id, img.url))
-    } else {
-      if (localStorage.getItem(img.id)) {
-        localStorage.removeItem(img.id)
-      }
-      console.log(localStorage.getItem(img.id, img.url))
-    }
-  }
+  // const saveToFavourites = () => {
+  //   if(img.isFavorite) {
+  //     localStorage.setItem(img.id, img.url);
+  //   } else {
+  //     if (localStorage.getItem(img.id)) {
+  //       localStorage.removeItem(img.id)
+  //     }
+  //   }
+  // }
 
-  saveToFavourites()
+  // saveToFavourites()
 
   const heartIcon = () => {
     if(img.isFavorite) {
