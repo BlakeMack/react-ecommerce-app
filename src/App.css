@@ -25,6 +25,15 @@ a {
   grid-auto-rows: minmax(200px, 312px);
 }
 
+.single-favourite-wrapper {
+  margin: auto;
+  max-width: fit-content;
+}
+
+.favourites-text {
+  text-align: center;
+}
+
 .Cart-page {
   padding: 10px;
   padding-left: 40px;
