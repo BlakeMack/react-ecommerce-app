@@ -9,7 +9,7 @@ export default function Favourites () {
   const className = gridChecker(favourites.length)
 
   const favimages = favourites.map((fav) => (
-    <Favitems key={fav.id} url={fav.url}/>
+    <Favitems key={fav.id} url={fav.url} id={fav.id}/>
   )
 )
 
