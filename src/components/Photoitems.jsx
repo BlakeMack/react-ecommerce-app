@@ -10,18 +10,6 @@ function Photoitems ({img, className}) {
 
   const isImageInCart = cart.some((photo) => photo.id === img.id)
 
-  // const saveToFavourites = () => {
-  //   if(img.isFavorite) {
-  //     localStorage.setItem(img.id, img.url);
-  //   } else {
-  //     if (localStorage.getItem(img.id)) {
-  //       localStorage.removeItem(img.id)
-  //     }
-  //   }
-  // }
-
-  // saveToFavourites()
-
   const heartIcon = () => {
     if(img.isFavorite) {
       return (
