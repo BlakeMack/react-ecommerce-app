@@ -29,11 +29,25 @@ function Cart () {
     return number_total.toLocaleString("en-GB", {style: "currency", currency: "GBP"})
   }
 
+  const cartText = () => {
+    if(cart.length > 0) {
+      return "Cart"
+    } else {
+      return "You currently have no items in your cart :("
+    }
+  }
+
+  const totalPrice = () => {
+    if(cart.length > 0) {
+      return <h1 className="total-price">Total: {totalcost()}</h1>
+    }
+  }
+
   return (
     <div className="Cart-page">
-      <h1>Cart</h1>
+      <h1>{cartText()}</h1>
       {cartContent}
-      <h1 className="total-price">Total: {totalcost()}</h1>
+      {totalPrice()}
       {orderbutton}
     </div>
   )
